@@ -1,0 +1,11 @@
+{
+  "name": "Node.js",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "node",
+  "workspaceFolder": "/app",
+  "extensions": [
+    "EditorConfig.EditorConfig",
+    "mhutchie.git-graph",
+    "eamodio.gitlens"
+  ]
+}

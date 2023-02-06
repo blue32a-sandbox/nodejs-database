@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  node:
+    image: node:18
+    volumes:
+      - .:/app:cached
+      - node_modules:/app/node_modules
+    working_dir: /app
+    tty: true
+
+  mssql2017:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Dev1029Pass
+      - MSSQL_PID=Developer
+      - MSSQL_LCID=1041
+      - MSSQL_COLLECTION=Japanese_CI_AS
+      - TZ=Asia/Tokyo
+    volumes:
+      - mssql2017data:/var/opt/mssql/data
+      - mssql2017log:/var/opt/mssql/log
+      - mssql2017secrets:/var/opt/mssql/secrets
+
+volumes:
+  node_modules:
+  mssql2017data:
+  mssql2017log:
+  mssql2017secrets:
