@@ -39,8 +39,6 @@ function executeStatement(connection) {
       console.log(err);
     } else {
       console.log(rowCount + ' rows');
-      // and we close the connection
-      connection.close();
     }
   });
 
@@ -48,6 +46,11 @@ function executeStatement(connection) {
     columns.forEach(function(column) {
       console.log(`${column.metadata.colName}: ${column.value}`);
     });
+  });
+
+  request.on('requestCompleted', function() {
+    console.log('requestCompleted');
+    connection.close();
   });
 
   request.on('done', function() {
