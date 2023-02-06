@@ -1,0 +1,7 @@
+{
+  "name": "node-database",
+  "private": true,
+  "dependencies": {
+    "tedious": "^15.1.2"
+  }
+}
