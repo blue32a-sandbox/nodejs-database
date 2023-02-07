@@ -2,6 +2,7 @@
   "name": "node-database",
   "private": true,
   "dependencies": {
+    "mssql": "^9.1.1",
     "tedious": "^15.1.2"
   }
 }
