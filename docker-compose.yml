@@ -12,6 +12,7 @@ services:
       - MSSQL_HOST=mssql2017
       - MSSQL_USRE=sa
       - MSSQL_PASSWORD=Dev1029Pass
+      - TZ=Asia/Tokyo
 
   mssql2017:
     image: mcr.microsoft.com/mssql/server:2017-latest
@@ -23,7 +24,7 @@ services:
       - MSSQL_PID=Developer
       - MSSQL_LCID=1041
       - MSSQL_COLLECTION=Japanese_CI_AS
-      - TZ=Asia/Tokyo
+      - TZ=UTC
     volumes:
       - mssql2017data:/var/opt/mssql/data
       - mssql2017log:/var/opt/mssql/log
